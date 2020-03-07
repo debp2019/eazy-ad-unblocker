@@ -1,0 +1,72 @@
+# Copyright (C) 2020 Pratyush Deb
+# This file is distributed under the same license as the Eazy Ad Unblocker plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Eazy Ad Unblocker 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/eazy-ad-unblocker\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-01-31T10:36:35+01:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+"X-Domain: eazy-ad-unblocker\n"
+
+#. Plugin Name of the plugin
+msgid "Eazy Ad Unblocker"
+msgstr ""
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://myplugins.net/"
+msgstr ""
+
+#. Description of the plugin
+msgid "Prevent ad blockers from blocking ads on your site."
+msgstr ""
+
+#. Author of the plugin
+msgid "Pratyush Deb"
+msgstr ""
+
+#: index.php:130
+msgid "Form not verified"
+msgstr ""
+
+#: index.php:143
+msgid "You must give a heading!"
+msgstr ""
+
+#: index.php:148
+msgid "You must give a text!"
+msgstr ""
+
+#: index.php:153
+msgid "Opacity must be a number!"
+msgstr ""
+
+#: index.php:165
+msgid "Settings saved!"
+msgstr ""
+
+#: index.php:198
+msgid "Eazy Ad Unblocker Settings"
+msgstr ""
+
+#: index.php:213
+msgid "Popup Title"
+msgstr ""
+
+#: index.php:214
+msgid "Popup Body"
+msgstr ""
+
+#: index.php:215
+msgid "Popup Opacity"
+msgstr ""
+
+#: index.php:227
+msgid "Save"
+msgstr ""
