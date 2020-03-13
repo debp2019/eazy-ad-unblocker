@@ -35,14 +35,14 @@ function eazy_ad_unblocker_add_jquery_ui()
         wp_enqueue_script('jquery-ui-mouse');
         wp_enqueue_script('jquery-ui-dialog');
         wp_enqueue_script('jquery-ui-button');
+		
+		wp_enqueue_script('jquery-ui-position');
+		wp_enqueue_script( "eazy_custom", plugins_url("eazy-ad-unblocker/js/custom.js", dirname(__FILE__)), array('jquery'), '1.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'eazy_ad_unblocker_add_jquery_ui' );
 
-
 function eazy_ad_unblocker_func_frontend()
 {
-	
-	wp_enqueue_script( "eazy_custom", plugins_url("eazy-ad-unblocker/js/custom.js", dirname(__FILE__)), array('jquery'), '1.0', true );
 	
 	$unblock_option = get_option("eazy-ad-unblocker-settings");
 	
@@ -90,6 +90,7 @@ function eazy_ad_unblocker_func_frontend()
 			</div>
 		</div>
 	<?php
+	
 }
 
 add_action("wp_footer", "eazy_ad_unblocker_func_frontend");
@@ -311,7 +312,7 @@ function eazy_ad_unblocker_activate_func()
 	
 	foreach($default_settings_array as $key=>$value)
 	{
-		$default_settings_array[sanitize_text_field($key)] = sanitize_text_field($value);
+		$default_settings_array[esc_sql($key)] = esc_sql($value);
 	}
 	
 	$default_settings = serialize($default_settings_array);
