@@ -17,9 +17,12 @@ jQuery(document).ready(function($){
 		},
 		close: function( event, ui ){  
 						
-			if($("#wrapfabtest").height() > 0) {
+			if($("#wrapfabtest").height() > 0)
+			{
 								
-			} else {
+			} 
+			else 
+			{
 								
 				preventDeleteDialog();
 								
@@ -34,20 +37,26 @@ jQuery(document).ready(function($){
 		
 		if(shiftDialog){
 			
-			jQuery("div.ui-dialog").position({
-				of: jQuery('.ui-widget-overlay'),
-				my: 'center top',
-				at: 'center top',
-				offset: '0 0'
-			});
+			if(jQuery("div.ui-dialog").length > 0)
+			{
+				jQuery("div.ui-dialog").position({
+					of: jQuery('.ui-widget-overlay'),
+					my: 'center top',
+					at: 'center top',
+					offset: '0 0'
+				});
+				
+				shiftDialog = false;
+			}
 			
-			shiftDialog = false;
 		}
 	}, '1000');
 	
 					
-	if($("#wrapfabtest").height() > 0) {
-		//do nothing				
+	if($("#wrapfabtest").height() > 0){
+		
+		clearInterval(timer);
+		
 	} else {
 
 		preventDeleteDialog();
