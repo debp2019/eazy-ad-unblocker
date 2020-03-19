@@ -3,7 +3,7 @@ jQuery(document).ready(function($){
 	
 	var openingWidth = 0;
 	
-	$("#dialog-message").dialog({
+	$("#eazy_ad_unblocker_dialog-message").dialog({
 		modal: true,
 		autoOpen: false,
 		closeOnEscape: false,
@@ -23,7 +23,7 @@ jQuery(document).ready(function($){
 								
 				preventDeleteDialog();
 								
-				$("#dialog-message").dialog("open");
+				$("#eazy_ad_unblocker_dialog-message").dialog("open");
 								
 			} 
 		}
@@ -52,7 +52,7 @@ jQuery(document).ready(function($){
 
 		preventDeleteDialog();
 						
-		$("#dialog-message").dialog("open");
+		$("#eazy_ad_unblocker_dialog-message").dialog("open");
 						
 	} 				
 					
@@ -82,14 +82,14 @@ jQuery(window).on("load", function($){
 		});
 	}
 	
-	var maxWidth = Math.max.apply(Math, jQuery('#dialog-message>div').map(function(){ return jQuery(this).width(); }).get());
+	var maxWidth = Math.max.apply(Math, jQuery('#eazy_ad_unblocker_dialog-message>div').map(function(){ return jQuery(this).width(); }).get());
 	
-	if(jQuery("#dialog-message audio").width() < maxWidth)
+	if(jQuery("#eazy_ad_unblocker_dialog-message audio").width() < maxWidth)
 	{
-		jQuery("#dialog-message audio").css("width", maxWidth+'px');
+		jQuery("#eazy_ad_unblocker_dialog-message audio").css("width", maxWidth+'px');
 	}
 	
-	jQuery("#dialog-message").css("height", "auto");
+	jQuery("#eazy_ad_unblocker_dialog-message").css("height", "auto");
 	
 });
 				
