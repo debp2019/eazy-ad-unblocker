@@ -71,7 +71,7 @@ function eazy_ad_unblocker_func_frontend()
 	wp_localize_script("eazy_custom", "eazy_opacity", array("opacity"=>$opacity));
 	
 	?>
-	<div id="dialog-message" title="<?php echo esc_attr($title); //escape attribute value ?>">
+	<div id="eazy_ad_unblocker_dialog-message" title="<?php echo esc_attr($title); //escape attribute value ?>">
 	  <?php 
 			$content = wp_check_invalid_utf8( $content, true );
 			//protect oEmbed
@@ -312,7 +312,7 @@ function eazy_ad_unblocker_activate_func()
 	
 	foreach($default_settings_array as $key=>$value)
 	{
-		$default_settings_array[esc_sql($key)] = esc_sql($value);
+		$default_settings_array[sanitize_text_field($key)] = sanitize_text_field($value);
 	}
 	
 	$default_settings = serialize($default_settings_array);
