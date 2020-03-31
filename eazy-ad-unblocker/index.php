@@ -48,19 +48,7 @@ function eazy_ad_unblocker_func_frontend()
 	
 	$unblock_option = sanitize_option( "eazy-ad-unblocker-settings", $unblock_option ); //sanitize retrieved option
 	
-	//fix get option array prob
-	
-	$unblock_array = array();
-	
-	if(!is_array($unblock_option))
-	{
-		$unblock_array = unserialize($unblock_option);
-	}
-	else{
-		$unblock_array = $unblock_option;
-	}	
-	
-	//end fix
+	$unblock_array = $unblock_option;
 	
 	$content = eazy_ad_unblocker_get_content($unblock_array["text"]);
 		
@@ -142,9 +130,7 @@ function eazy_ad_unblock_admin_manage()
 		
 		$popup_title = sanitize_text_field($_POST["unblocker_title"]); //sanitization
 		
-		$popup_text = $_POST["unblocker_text"]; //can't use sanitize_textarea_field as it removes everything including image tags
-		
-		$popup_text = strip_tags($popup_text, "<a><em><strong><hr><img><audio><video><br><p><div><span><blockquote><embed><object><source>"); 
+		$popup_text = wp_kses_post($_POST["unblocker_text"]); //can't use sanitize_textarea_field as it removes everything including image tags 
 		
 		$popup_text = wp_check_invalid_utf8( $popup_text, true ); //strip out invalid utf-8
 		
@@ -170,9 +156,7 @@ function eazy_ad_unblock_admin_manage()
 			
 			$unblock_settings = array("title"=>$popup_title, "text"=>$popup_text, "opacity"=>$popup_opacity);
 			
-			$settings_to_store = serialize($unblock_settings);
-			
-			update_option("eazy-ad-unblocker-settings", $settings_to_store);
+			update_option("eazy-ad-unblocker-settings", $unblock_settings);
 			
 			$_SESSION["success"] = "<div class='updated notice is-dismissible'><p>".__("Settings saved!", "eazy-ad-unblocker")."</p></div>";
 			
@@ -184,19 +168,7 @@ function eazy_ad_unblock_admin_manage()
 		
 		$unblock_option = sanitize_option( "eazy-ad-unblocker-settings", $unblock_option );
 		
-		$unblock_array = array();
-		
-		//fix get option array prob
-		
-		if(!is_array($unblock_option))
-		{
-			$unblock_array = unserialize($unblock_option);
-		}
-		else
-		{
-			$unblock_array = $unblock_option;
-		}
-		//end fix
+		$unblock_array = $unblock_option;
 		
 		$content = stripslashes($unblock_array["text"]);
 		
@@ -315,11 +287,9 @@ function eazy_ad_unblocker_activate_func()
 		$default_settings_array[sanitize_text_field($key)] = sanitize_text_field($value);
 	}
 	
-	$default_settings = serialize($default_settings_array);
-	
 	if(get_option("eazy-ad-unblocker-settings") == false)
 	{
-		update_option("eazy-ad-unblocker-settings", $default_settings);
+		update_option("eazy-ad-unblocker-settings", $default_settings_array);
 	}
 }
 register_activation_hook( __FILE__, 'eazy_ad_unblocker_activate_func' );
