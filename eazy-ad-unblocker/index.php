@@ -62,7 +62,47 @@ function eazy_ad_unblocker_func_frontend()
 	<div id="eazy_ad_unblocker_dialog-message" title="<?php echo esc_attr($title); //escape attribute value ?>">
 	  <?php 
 			$content = wp_check_invalid_utf8( $content, true );
+			
 			//protect oEmbed
+			$allowed_html = array(
+								  "iframe"=>array("src"=>array(), 
+													"width"=>array(), 
+													"height"=>array(), 
+													"border"=>array(), 
+													"class"=>array(),
+													"name"=>array(),
+													"id"=>array()),
+								  "img"=>array("src"=>array(), 
+												"alt"=>array(), 
+												"width"=>array(), 
+												"height"=>array(), 
+												"class"=>array(),
+												"id"=>array()),
+								  "audio"=>array("width"=>array(), 
+												 "height"=>array(), 
+												 "controls"=>array("yes")), 
+								  "video"=>array("width"=>array(), 
+												"height"=>array(), 
+												"controls"=>array("yes")), 
+								  "source"=>array("src"=>array(), 
+												"type"=>array("video/mp4",
+															  "video/m4v",
+															  "video/webm",
+															  "video/ogv",
+															  "video/x-ms-wmv",
+															  "video/flv", 
+															  "audio/ogg", 
+															  "audio/mp3",
+															  "audio/m4a",
+															  "audio/wav",
+															  "audio/wma") 
+												)
+									); //"video/mp4", "video/ogg", "audio/ogg", "audio/mpeg"
+			
+			$allowed_html = array_merge(wp_kses_allowed_html( "post" ), $allowed_html);
+			
+			$content = wp_kses($content, $allowed_html, array("http", "https")); //allowed html only
+			
 			echo $content;
 	  ?>
 	</div> 

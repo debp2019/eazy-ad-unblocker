@@ -110,4 +110,5 @@ The following features exist in this plugin:
 5.	The user also cannot view or use web developer tools to bypass the popup or view the popup html.
 6.	The popup auto-scales to the content visible in it.
 7.	The plugin checks whether ad blockers are on or not, not if the page has ads.
-8.	The popup's title and text are editable. You can also add media to the body text.
+8.	The popup's title, text and opacity are editable. You can also add media such as images, videos and 
+	audio clips to the body text. Audio and video are HTML5 based.
