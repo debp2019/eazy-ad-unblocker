@@ -120,6 +120,25 @@ jQuery(document).ready(function($){
 				$(".ui-widget-overlay").css({'background-color': '#000', 'opacity': eazy_opacity.opacity, 'z-index': 999998 });
 				$(".ui-dialog").css({'z-index': 999999 });
 				
+				/*--adjust popup to follow scrolling, works only when popup is shorter than viewport , 15 April 2020--*/
+				
+				var winHeight = $(window).height();
+				
+				var popupHeight = $(this).height();
+				
+				if(popupHeight < winHeight)
+				{
+					$(this).parent().css('position', 'fixed');
+				}
+				
+				//blur April 26 2020
+				
+				$(this).parents('.ui-dialog').attr('tabindex', -1)[0].focus();
+				
+				//end blur April 26 2020
+				
+				/*----------end popup----------*/
+				
 		},
 		close: function( event, ui ){  
 						
@@ -129,10 +148,13 @@ jQuery(document).ready(function($){
 			} 
 			else 
 			{
+				/***April 26 2020****/
+				location.reload(); //April 26 2020
+				
+				//preventDeleteDialog();
 								
-				preventDeleteDialog();
-								
-				$("#eazy_ad_unblocker_dialog-message").dialog("open");
+				//$("#eazy_ad_unblocker_dialog-message").dialog("open");
+				/****April 26 2020 end***/
 								
 			} 
 		}
@@ -148,7 +170,67 @@ jQuery(document).ready(function($){
 		$("#eazy_ad_unblocker_dialog-message").dialog("open");
 						
 	} 				
+	
+	
+	//popup adjustment on scroll April 15 2020
+	var lastScrollTop = 0;	
+	
+	$(window).scroll(function(e){
+		
+		var st = $(this).scrollTop();
+		
+		var direction = '';
+		
+		if (st > lastScrollTop){
+			// downscroll code
+			direction = 'down';
+			
+		} else {
+			// upscroll code
+			direction = 'up';
+		}
+		lastScrollTop = st;
+				
+		var popupHeight = $("#eazy_ad_unblocker_dialog-message").height();
+		
+		var fromTop = $(window).scrollTop();
+		
+		var docuHeight = $(document).height();
+		
+		var dialogBottom = $("#eazy_ad_unblocker_dialog-message").offset().top + $("#eazy_ad_unblocker_dialog-message").outerHeight(true);
+		
+		var remaining = 0;
+		
+		if(popupHeight > window.innerHeight && popupHeight < docuHeight)
+		{
+			if(window.innerHeight + fromTop >= dialogBottom) //don't change this logic
+			{	
+				
+				$("#eazy_ad_unblocker_dialog-message").closest(".ui-dialog").position({ my: 'bottom', at: 'bottom', of: window });	
+				
+				
+			}
+			else{
+				
+				if(direction == 'up')
+				{
 					
+					var dialog = $('#eazy_ad_unblocker_dialog-message');
+					var offset = dialog.offset();
+					dialogViewportOffsetTop = offset.top - $(document).scrollTop(); //don't change logic
+					
+					if(dialogViewportOffsetTop >= 0)
+					{
+						$("#eazy_ad_unblocker_dialog-message").closest(".ui-dialog").position({ my: 'top', at: 'top', of: window });
+					}
+				}
+				
+			}
+			
+		}
+		
+	});	
+	//end adjustment
 });
 
 jQuery(window).on("load", function($){
