@@ -16,7 +16,9 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 function eazy_ad_unblocker_dialog_head_func()
 {
 	wp_enqueue_style("jquery-ui-css", plugins_url('css/themes/redmond/jquery-ui.min.css', __FILE__)); //include css locally
-	
+	/**April 26 2020**/
+	wp_enqueue_style("custom-ui-css", plugins_url('css/style.css', __FILE__));
+	/**End April 26 2020***/
 } 
 
 add_action("wp_head", "eazy_ad_unblocker_dialog_head_func");
@@ -111,7 +113,7 @@ function eazy_ad_unblocker_func_frontend()
 				background-color: transparent;
 				height: 1px;
 				width: 1px;
-			}
+			}	
 		</style>
 		<div id="wrapfabtest">
 			<div class="adBanner">
