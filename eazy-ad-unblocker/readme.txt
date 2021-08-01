@@ -1,11 +1,11 @@
 === Eazy Ad Unblocker===
 
 Contributors: debp85
-Tags: anti-adblock, ad-unblocker
+Tags: anti adblock, ad unblocker
 Requires at least: 3.9
-Tested up to: 5.4.0
+Tested up to: 5.8
 Requires PHP: 7.2
-Stable tag: 1.0
+Stable tag: 1.1.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
  
@@ -18,9 +18,16 @@ settings.
 Eazy Ad Unblocker works on Microsoft Edge, FireFox, Google Chrome and Opera browsers. If users have their adblocker on while surfing
 the web in these browsers, they will be prompted to switch their adblocker off or whitelist the site they are currently viewing 
 via a modal popup. Users will not be able to view the website content clearly, nor will they be able to view the source of the page 
-they are on, unless they deactivate the adblocker or whitelist the site in their adblocker settings. There is an option to completely 
-black-out the content in the popup background through opacity settings. The admin of the site can also configure the text and heading 
-of the modal popup. 
+they are on, unless they deactivate the adblocker or whitelist the site in their adblocker settings. There will be an option to close the 
+popup so that they are not locked out of the site completely. It will be in the form of a button marked 'X'.
+
+There is an option to completely black-out the content in the popup background through opacity settings. The admin of the site can 
+also configure the text and heading of the modal popup. The popup close button is controllable from wp-admin. You can also 
+set the width of the popup for larger devices like ipads, laptops, desktops if you don't like the popup to be totally spread out. 
+
+You can now choose from among six themes to style the popup.
+
+Thanks for the art work to Rochana Deb!
 
 
 == Installation ==
@@ -62,8 +69,9 @@ IMPORTANT: Either way, you need to configure the plugin for first-time use in yo
 Browse to the site where you installed this plugin.
 To test the popup, activate the ad blocker in your browser for the site.
 Refresh your page if it does not auto-refresh. You should see a popup and verify that 
-it cannot be dismissed in any way except disabling your adblocker. You should also not be 
-able to view source for the page you are on by pressing Ctrl+U.   
+it cannot be dismissed in any way except disabling your adblocker or whitelisting your site in it. 
+There is a button marked with a cross on the top right corner of the popup. Click it to close the popup.
+You should also not be able to view source for the page you are on by pressing Ctrl+U.   
  
 
  
@@ -87,6 +95,16 @@ A1. The plugin needs to be configured for first-time use after installation and 
 Q2.	I activated and configured the plugin. Then I activated my adblocker for my site. But I don't get any popup. Why?
 
 A2. You need to refresh the page in the browser after activating the ad blocker. 
+
+
+Q3. I set the popup width for large screens from admin section. Now I want to reverse the effect of setting width?
+
+A3.	You need to set the popup width to 0 in popup admin and save the settings.
+
+
+Q4. I am not being allowed to save my plugin options as it asks for a theme. I want to keep the earlier theme.
+
+A4.	Just save your options with the blue theme which has blue preview image.
  
   
 == Screenshots ==
@@ -112,3 +130,71 @@ The following features exist in this plugin:
 7.	The plugin checks whether ad blockers are on or not, not if the page has ads.
 8.	The popup's title, text and opacity are editable. You can also add media such as images, videos and 
 	audio clips to the body text. Audio and video are HTML5 based.
+9.	The admin can configure, from the backend, whether to show a close button in the popup or not. 
+10. The popup dialog is responsive. 
+11.	The popup can be disabled on individual pages and posts.
+12. The popup width can be set for larger devices like ipads and desktop screens from the admin section.
+13.	The popup style theme can be changed.
+14.	CSS classes and id attributes are random for defence against ad blockers.
+15. Deleting the plugin deletes its data as well.
+	
+	
+== Changelog ==
+
+= 1.1.9 2021/07/26 =
+* Bug fix for PHP 8 warnings.
+
+= 1.1.8 2021/07/25 =
+* Plugin folder can be hidden from adblockers using non-English characters in new folder name.
+
+
+== Upgrade Notice ==
+
+= 1.1.9 =
+Upgrade for bug fix for PHP 8 warnings.
+
+= 1.1.8 =
+Upgrade for hiding plugin folder using non-English characters in new folder name.
+
+= 1.1.7 =
+Upgrade for fix of two issues  - session and REST API, in Wordpress Admin Site Health section. (WordPress 5.2 and above)
+
+= 1.1.6 =
+Upgrade for popup defence against ad blockers like Ad Guard through randomization of css class names and id attributes.
+Please 'Restore' your plugin folder before upgrading. 'Hide' plugin again after upgrading is over.
+
+= 1.1.5 =
+Upgrade for popup defence against blanket blocking of plugin files by some ad blockers like Ad Guard.
+
+= 1.1.4 =
+Upgrade for popup enable/disable bug fixes in post archive pages. Introducing popup theming.
+
+= 1.1.3 =
+Upgrade for bug fixes.
+
+= 1.1.2 =
+Upgrade for setting popup width for large devices like iPads, laptops and desktops.
+
+= 1.1.1 =
+Upgrade for refresh button fix.
+
+= 1.1.0 =
+Upgrade to enjoy NEW feature to disable popup on individual pages and posts.
+
+= 1.0.9 =
+Upgrade to enjoy NEW responsive popup.
+
+= 1.0.8 =
+Upgrade to enjoy NEW refresh button in popup and some bug fixes.
+
+= 1.0.7 =
+Upgrade to enjoy third-party shortcodes in the text editor field.
+
+= 1.0.6 =
+Code cleanup
+
+= 1.0.5 =
+This is a maintenance upgrade to improve the functionality of the previous versions.
+
+= 1.0.4 =
+Upgrade to this version to enjoy admin control over the popup close button.

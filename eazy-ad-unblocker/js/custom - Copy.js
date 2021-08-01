@@ -1,7 +1,7 @@
 var adBlockEnabled = false;
 var dialogClosed = false; //July 30 2020
 var eazy_ad_unblocker_loaded = false; //Dec 13 2020
-var eazy_ad_unblocker_dialog_init = null;//July 29 2021
+
 //alert(JSON.stringify(eazy_ad_unblocker_popup_params));
 
 var eazy_ad_unblocker_msg_var = "#"+eazy_ad_unblocker_popup_params.eazy_ad_unblocker_dialog_message;
@@ -125,8 +125,8 @@ jQuery(document).ready(function($){
 	}
 	
 	/****End Dec 21 2020***/
-	//July 29 2021
-	eazy_ad_unblocker_dialog_init = $(eazy_ad_unblocker_msg_var).dialog({ //eazy_ad_unblocker_dialog_message
+	
+	$(eazy_ad_unblocker_msg_var).dialog({ //eazy_ad_unblocker_dialog_message
 		modal: true,
 		autoOpen: false,
 		closeOnEscape: false,
@@ -334,12 +334,11 @@ jQuery(window).on("load", function($){
 	}
 	else{
 		
+		//alert("hi");
+
 		preventDeleteDialog();
 						
-		//jQuery(eazy_ad_unblocker_msg_var).dialog("open");
-		
-		//July 29 2021
-		jQuery(eazy_ad_unblocker_dialog_init).dialog("open");
+		jQuery(eazy_ad_unblocker_msg_var).dialog("open");
 						
 	}
 	//alert('loaded'); //works

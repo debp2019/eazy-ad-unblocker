@@ -1,15 +1,15 @@
-# Copyright (C) 2020 Pratyush Deb
+# Copyright (C) 2021 Pratyush Deb
 # This file is distributed under the same license as the Eazy Ad Unblocker plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Eazy Ad Unblocker 1.0\n"
+"Project-Id-Version: Eazy Ad Unblocker 1.1.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/eazy-ad-unblocker\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-01-31T10:36:35+01:00\n"
+"POT-Creation-Date: 2021-07-25T14:13:25+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: eazy-ad-unblocker\n"
@@ -19,8 +19,7 @@ msgid "Eazy Ad Unblocker"
 msgstr ""
 
 #. Plugin URI of the plugin
-#. Author URI of the plugin
-msgid "https://myplugins.net/"
+msgid "https://myplugins.net/demo"
 msgstr ""
 
 #. Description of the plugin
@@ -31,42 +30,181 @@ msgstr ""
 msgid "Pratyush Deb"
 msgstr ""
 
-#: index.php:130
+#. Author URI of the plugin
+msgid "https://myplugins.net/"
+msgstr ""
+
+#: index.php:350
 msgid "Form not verified"
 msgstr ""
 
-#: index.php:143
+#: index.php:407
 msgid "You must give a heading!"
 msgstr ""
 
-#: index.php:148
+#: index.php:412
 msgid "You must give a text!"
 msgstr ""
 
-#: index.php:153
+#: index.php:417
 msgid "Opacity must be a number!"
 msgstr ""
 
-#: index.php:165
+#: index.php:424
+msgid "You must give a value for 'Show popup close button'!"
+msgstr ""
+
+#: index.php:436
+msgid "You must give a value for 'Choose popup style'!"
+msgstr ""
+
+#: index.php:450
 msgid "Settings saved!"
 msgstr ""
 
-#: index.php:198
+#: index.php:506
 msgid "Eazy Ad Unblocker Settings"
 msgstr ""
 
-#: index.php:213
+#: index.php:516
+msgid "Ad blockers still blocking your popup? Try hiding the plugin."
+msgstr ""
+
+#: index.php:517
+msgid "Go here"
+msgstr ""
+
+#: index.php:523
 msgid "Popup Title"
 msgstr ""
 
-#: index.php:214
+#: index.php:524
 msgid "Popup Body"
 msgstr ""
 
-#: index.php:215
+#: index.php:525
 msgid "Popup Opacity"
 msgstr ""
 
-#: index.php:227
+#: index.php:538
+msgid "Show popup close button"
+msgstr ""
+
+#: index.php:540
+msgid "Yes"
+msgstr ""
+
+#: index.php:541
+msgid "No"
+msgstr ""
+
+#: index.php:546
+msgid "Popup Width For Large Screen"
+msgstr ""
+
+#: index.php:550
+msgid "Choose popup style"
+msgstr ""
+
+#: index.php:566
+#: index.php:583
+#: index.php:606
 msgid "Save"
+msgstr ""
+
+#: index.php:590
+#: index.php:944
+#: index.php:1128
+msgid "Hide"
+msgstr ""
+
+#: index.php:597
+#: index.php:961
+#: index.php:1159
+msgid "Restore"
+msgstr ""
+
+#: index.php:678
+msgid "Disable Eazy Ad Unblocker"
+msgstr ""
+
+#: index.php:696
+msgid "Disable Popup for this Page/Post"
+msgstr ""
+
+#: index.php:893
+#: index.php:1010
+msgid "Hiding not allowed"
+msgstr ""
+
+#: index.php:902
+#: index.php:1055
+msgid "Plugin Folder Hidden successfully."
+msgstr ""
+
+#: index.php:905
+#: index.php:925
+#: index.php:1058
+#: index.php:1094
+msgid "Sorry! Something went wrong!"
+msgstr ""
+
+#: index.php:913
+#: index.php:1074
+msgid "Restoring not allowed"
+msgstr ""
+
+#: index.php:922
+#: index.php:1091
+msgid "Plugin Folder restored successfully."
+msgstr ""
+
+#: index.php:933
+#: index.php:1103
+msgid "Please take a backup of your entire wordpress plugins folder and your database before doing anything here."
+msgstr ""
+
+#: index.php:942
+#: index.php:1124
+msgid "Hide plugin from pesky ad blockers"
+msgstr ""
+
+#: index.php:943
+#: index.php:1127
+msgid "Click to hide"
+msgstr ""
+
+#: index.php:949
+#: index.php:1136
+msgid "Please restore your plugin before updation if you have hidden it."
+msgstr ""
+
+#: index.php:959
+#: index.php:1157
+msgid "Restore plugin for Updation"
+msgstr ""
+
+#: index.php:960
+#: index.php:1158
+msgid "Click to restore"
+msgstr ""
+
+#: index.php:1019
+msgid "Sorry! Folder name cannot be empty!"
+msgstr ""
+
+#: index.php:1040
+msgid "Sorry! Folder name can only have letters, numbers and underscores!"
+msgstr ""
+
+#: index.php:1063
+msgid "Sorry! That folder already exists!"
+msgstr ""
+
+#: index.php:1083
+msgid "Plugin folder is not hidden!"
+msgstr ""
+
+#: index.php:1125
+msgid "Enter new folder name"
 msgstr ""
